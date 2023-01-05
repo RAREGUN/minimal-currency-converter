@@ -29,7 +29,7 @@ namespace minimal_currency_converter.ViewModels
             }
         }
 
-        private string _leftCurrencyAmount = "0.00";
+        private string _leftCurrencyAmount = "0,00";
         public string LeftCurrencyAmount
         {
             get => _leftCurrencyAmount;
@@ -60,7 +60,7 @@ namespace minimal_currency_converter.ViewModels
             }
         }
         
-        private string _rightCurrencyAmount = "0.00";
+        private string _rightCurrencyAmount = "0,00";
         public string RightCurrencyAmount
         {
             get => _rightCurrencyAmount;
@@ -126,8 +126,9 @@ namespace minimal_currency_converter.ViewModels
 
                 decimal rightAmount = decimal.Parse(RightCurrencyAmount);
                 
-                LeftCurrencyAmount = $"{_currencyController.Convert(rightCurrency, leftCurrency, rightAmount):0.00}";
+                _leftCurrencyAmount = $"{_currencyController.Convert(rightCurrency, leftCurrency, rightAmount):0.00}";
                 
+                NotifyOfPropertyChange(() => LeftCurrencyAmount);
                 NotifyOfPropertyChange(() => SelectedLeftCurrencyKind);
             }
         }
@@ -151,8 +152,9 @@ namespace minimal_currency_converter.ViewModels
 
                 decimal leftAmount = decimal.Parse(LeftCurrencyAmount);
                 
-                RightCurrencyAmount = $"{_currencyController.Convert(leftCurrency, rightCurrency, leftAmount):0.00}";
+                _rightCurrencyAmount = $"{_currencyController.Convert(leftCurrency, rightCurrency, leftAmount):0.00}";
                 
+                NotifyOfPropertyChange(() => RightCurrencyAmount);
                 NotifyOfPropertyChange(() => SelectedRightCurrencyKind);
             }
         }

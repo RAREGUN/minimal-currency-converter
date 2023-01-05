@@ -25,10 +25,10 @@
             </Grid.ColumnDefinitions>
             
             <TextBox x:Name="LeftCurrencyAmount" Grid.Column="0" Text="1000"/>
-            <ComboBox x:Name="LeftCurrencyKind" SelectedItem="{Binding SelectedLeftCurrencyKind}" Grid.Column="1" Margin="5,0,0,0"/>
+            <ComboBox x:Name="LeftCurrencyKind" SelectedItem="{Binding SelectedLeftCurrencyKind, Mode=TwoWay}" Grid.Column="1" Margin="5,0,0,0"/>
             <TextBlock Grid.Column="2" Text="=" HorizontalAlignment="Center" Margin="5,0,0,0"/>
             <TextBox x:Name="RightCurrencyAmount" Grid.Column="3" Text="1000" Margin="5,0,0,0"/>
-            <ComboBox x:Name="RightCurrencyKind" SelectedItem="{Binding SelectedRightCurrencyKind}" Grid.Column="4" Margin="5,0,0,0"/>
+            <ComboBox x:Name="RightCurrencyKind" SelectedItem="{Binding SelectedRightCurrencyKind, Mode=TwoWay}" Grid.Column="4" Margin="5,0,0,0"/>
         </Grid>
     </Grid>
 </Window>
