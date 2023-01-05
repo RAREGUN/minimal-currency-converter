@@ -8,12 +8,10 @@
          mc:Ignorable="d"
          Title="Minimal Currency Converter"
          Width="300"
-         Height="100"
+         Height="71"
          WindowStyle="ToolWindow">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         
@@ -32,7 +30,5 @@
             <TextBox x:Name="RightCurrencyAmount" Grid.Column="3" Text="1000" Margin="5,0,0,0"/>
             <ComboBox x:Name="RightCurrencyKind" SelectedItem="{Binding SelectedRightCurrencyKind}" Grid.Column="4" Margin="5,0,0,0"/>
         </Grid>
-        
-        <Button x:Name="RefreshButtonClick" Grid.Row="2" Content="Обновить"></Button>   
     </Grid>
 </Window>

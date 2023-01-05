@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
 using Caliburn.Micro;
+using minimal_currency_converter.Controllers;
 using minimal_currency_converter.ViewModels;
 
 namespace minimal_currency_converter
@@ -27,6 +28,8 @@ namespace minimal_currency_converter
             _container.Singleton<IEventAggregator, EventAggregator>();
             
             _container.PerRequest<ShellViewModel>();
+            _container.PerRequest<CurrencyDataController>();
+            _container.PerRequest<CurrencyController>();
         }
 
         protected override async void OnStartup(object sender, StartupEventArgs e)
