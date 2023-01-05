@@ -20,9 +20,27 @@ namespace minimal_currency_converter.Models
         [JsonProperty("Timestamp")]
         public DateTimeOffset Timestamp { get; set; }
 
+        private Dictionary<string, Currency> _currencies;
         [JsonProperty("Valute")]
-        public Dictionary<string, Currency> Currencies { get; set; }
-        
+        public Dictionary<string, Currency> Currencies
+        {
+            get => _currencies;
+            set
+            {
+                _currencies = value;
+                _currencies.Add("RUB", new Currency
+                {
+                    ID = "",
+                    NumCode = "643",
+                    CharCode = "RUB",
+                    Nominal = 1,
+                    Name = "Российский рубль",
+                    Value = 1,
+                    Previous = 1
+                });
+            }
+        }
+
         public class Currency
         {
             [JsonProperty("ID")]
